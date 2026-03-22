@@ -133,7 +133,7 @@ git add . && git commit -m "update API URL" && git push
 2. Dashboard pe `frontend/` folder **drag & drop** karo
 3. 30 second mein ready:
 
-🔗 **`https://random-name.netlify.app`** — ye teri LIVE LINK hai!
+🔗 **`https://random-name.netlify.app`** — that's your live link!
 
 ---
 
@@ -164,22 +164,7 @@ git add . && git commit -m "update API URL" && git push
   "risk_level": "High Risk",
   "message": "Kripya turant doctor se milein..."
 }
-```
 
----
-
-## ⚠️ Important Tips
-
-- **Render sleep:** Free plan 15 min baad sleep ho jaata hai — pehli request mein 30–50 sec lag sakte hain, normal hai
-- **CORS:** `main.py` mein `allow_origins=["*"]` already set hai — koi issue nahi
-- **API test:** `https://your-app.onrender.com/docs` pe Swagger UI milega
-- **URL check:** Production mein `index.html` mein Render URL hona chahiye, localhost nahi
-
----
-
-## 📌 Disclaimer
-
-> Sirf **educational purpose** ke liye. Medical diagnosis ke liye qualified **cardiologist** se milein.
 
 ---
 
