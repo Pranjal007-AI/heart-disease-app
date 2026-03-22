@@ -1,0 +1,186 @@
+# 🫀 Cardiac Risk Predictor
+### by Pranjal Parashar
+
+> KNN-based Heart Disease Prediction Web App — FastAPI Backend + 3D HTML Frontend
+
+---
+
+## 🧠 Project Overview
+
+Yeh ek AI-powered web application hai jo **K-Nearest Neighbors (KNN)** machine learning model use karke heart disease ka risk predict karta hai.
+
+User apne health parameters sliders aur dropdowns se enter karta hai aur model instantly predict kar deta hai ki heart disease hai ya nahi — confidence score ke saath.
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Technology | Kaam |
+|-------|-----------|------|
+| Frontend | HTML + CSS + JavaScript | 3D UI, sliders, animated heart, result display |
+| Backend | FastAPI (Python) | REST API, model loading, prediction |
+| ML Model | KNN (scikit-learn) | Heart disease binary classification |
+| Deployment | Render.com + Netlify | Free cloud hosting — live link |
+
+---
+
+## 📁 Folder Structure
+
+```
+heart-disease-app/
+├── backend/
+│   ├── main.py                  ← FastAPI server (API endpoints)
+│   ├── requirements.txt         ← Python dependencies
+│   ├── columns.pkl              ← Feature order (15 features)
+│   ├── Scaler.pkl               ← StandardScaler (trained)
+│   └── heart_disease_knn.pkl    ← Trained KNN model
+└── frontend/
+    └── index.html               ← Poora UI (3D heart, sliders, form)
+```
+
+---
+
+## 📊 Model Features (15 Total)
+
+| Feature | Input Type | Description |
+|---------|-----------|-------------|
+| Age | Slider (1–100) | Patient ki umar (years) |
+| RestingBP | Slider (80–220) | Resting blood pressure (mm Hg) |
+| Cholesterol | Slider (0–600) | Serum cholesterol (mg/dl) |
+| FastingBS | Dropdown | Fasting blood sugar > 120 mg/dl (0/1) |
+| MaxHR | Slider (60–220) | Maximum heart rate achieved (bpm) |
+| Oldpeak | Slider (-2 to 8) | ST depression (exercise vs rest) |
+| Sex | Dropdown | M (Male) ya F (Female) |
+| ChestPainType | Dropdown | ASY / ATA / NAP / TA |
+| RestingECG | Dropdown | Normal / ST / LVH |
+| ExerciseAngina | Dropdown | Y (Yes) ya N (No) |
+| ST_Slope | Dropdown | Up / Flat / Down |
+
+> **Note:** Categorical fields internally one-hot encode hote hain — backend automatically handle karta hai.
+
+---
+
+## 🖥️ Local Setup
+
+### Step 1 — Clone Karo
+```bash
+git clone https://github.com/APKA_USERNAME/heart-disease-app.git
+cd heart-disease-app
+```
+
+### Step 2 — Backend Setup
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac / Linux
+pip install -r requirements.txt
+```
+
+### Step 3 — Server Start Karo
+```bash
+uvicorn main:app --reload --port 8000
+```
+✅ API Docs: http://127.0.0.1:8000/docs
+
+### Step 4 — Frontend Open Karo
+`frontend/index.html` ko browser mein double-click karke open karo.
+
+---
+
+## 🌐 Live Link Generate Karna (Free Deployment)
+
+```
+GitHub → Render (backend) → index.html update → Netlify (frontend) = 🔗 LIVE LINK
+```
+
+### 🔵 Step 1 — GitHub Pe Upload Karo
+```bash
+git init
+git add .
+git commit -m "heart disease predictor by Pranjal Parashar"
+git remote add origin https://github.com/APKA_USERNAME/heart-disease-app.git
+git push -u origin main
+```
+
+### 🟠 Step 2 — Render.com Pe Backend Deploy Karo
+1. [render.com](https://render.com) → GitHub se Sign Up
+2. **New +** → **Web Service** → Repo connect karo
+3. Ye settings fill karo:
+
+| Setting | Value |
+|---------|-------|
+| Root Directory | `backend` |
+| Runtime | `Python 3` |
+| Build Command | `pip install -r requirements.txt` |
+| Start Command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
+
+4. Deploy karo → milega: `https://heart-disease-xxxx.onrender.com` ✅
+
+### 🟡 Step 3 — index.html Mein URL Update Karo
+`frontend/index.html` mein ye line update karo:
+```js
+// Ye line dhundho aur Render URL daal do
+const API = "https://heart-disease-xxxx.onrender.com";
+```
+Phir push karo:
+```bash
+git add . && git commit -m "update API URL" && git push
+```
+
+### 🟢 Step 4 — Netlify Pe Frontend Deploy Karo
+1. [netlify.com](https://netlify.com) → Sign Up
+2. Dashboard pe `frontend/` folder **drag & drop** karo
+3. 30 second mein ready:
+
+🔗 **`https://random-name.netlify.app`** — ye teri LIVE LINK hai!
+
+---
+
+## 📡 API Reference
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Health check |
+| GET | `/health` | Model status |
+| POST | `/predict` | Prediction endpoint |
+
+### POST `/predict` — Request
+```json
+{
+  "Age": 52, "Sex": "M", "RestingBP": 130,
+  "Cholesterol": 245, "FastingBS": 0, "MaxHR": 150,
+  "ChestPainType": "ASY", "RestingECG": "Normal",
+  "ExerciseAngina": "N", "Oldpeak": 1.5, "ST_Slope": "Up"
+}
+```
+
+### Response
+```json
+{
+  "prediction": 1,
+  "result": "Heart Disease Detected",
+  "probability": 87.3,
+  "risk_level": "High Risk",
+  "message": "Kripya turant doctor se milein..."
+}
+```
+
+---
+
+## ⚠️ Important Tips
+
+- **Render sleep:** Free plan 15 min baad sleep ho jaata hai — pehli request mein 30–50 sec lag sakte hain, normal hai
+- **CORS:** `main.py` mein `allow_origins=["*"]` already set hai — koi issue nahi
+- **API test:** `https://your-app.onrender.com/docs` pe Swagger UI milega
+- **URL check:** Production mein `index.html` mein Render URL hona chahiye, localhost nahi
+
+---
+
+## 📌 Disclaimer
+
+> Sirf **educational purpose** ke liye. Medical diagnosis ke liye qualified **cardiologist** se milein.
+
+---
+
+*Made with ❤️ by Pranjal Parashar*
