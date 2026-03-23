@@ -1,6 +1,16 @@
 # 🫀 Cardiac Risk Predictor
 ### by Pranjal Parashar
 
+
+## 🔗 Live Demo
+👉 **[Click here to try the app](https://cardiac-risk-predictor-pranjal.netlify.app)**
+
+> Backend API: https://heart-disease-app-1974.onrender.com
+
+
+
+
+
 > KNN-based Heart Disease Prediction Web App — FastAPI Backend + 3D HTML Frontend
 
 ---
