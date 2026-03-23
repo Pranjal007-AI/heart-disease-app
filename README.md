@@ -3,7 +3,7 @@
 
 
 ## 🔗 Live Demo
-👉 **[Click here to try the app](https://cardiac-risk-predictor-pranjal.netlify.app)**
+👉 Try the Web App **(https://cardiac-risk-predictor-pranjal.netlify.app)**
 
 > Backend API: https://heart-disease-app-1974.onrender.com
 
