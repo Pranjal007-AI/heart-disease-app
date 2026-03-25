@@ -17,15 +17,16 @@
 
 ## 🧠 Project Overview
 
-Yeh ek AI-powered web application hai jo **K-Nearest Neighbors (KNN)** machine learning model use karke heart disease ka risk predict karta hai.
+This is Ai powered Webapp that's work on a  **K-Nearest Neighbors (KNN)** machine learning model use that use to predict the 
+heart disease .
 
-User apne health parameters sliders aur dropdowns se enter karta hai aur model instantly predict kar deta hai ki heart disease hai ya nahi — confidence score ke saath.
+The user enters their health parameters using sliders and dropdowns, and the model instantly predicts whether they have heart disease or not — along with a confidence score.
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Layer | Technology | Kaam |
+| Layer | Technology | work |
 |-------|-----------|------|
 | Frontend | HTML + CSS + JavaScript | 3D UI, sliders, animated heart, result display |
 | Backend | FastAPI (Python) | REST API, model loading, prediction |
@@ -66,7 +67,7 @@ heart-disease-app/
 | ExerciseAngina | Dropdown | Y (Yes) ya N (No) |
 | ST_Slope | Dropdown | Up / Flat / Down |
 
-> **Note:** Categorical fields internally one-hot encode hote hain — backend automatically handle karta hai.
+> **Note:** Categorical fields are internally one-hot encoded — the backend handles this automatically.
 
 ---
 
@@ -94,7 +95,7 @@ uvicorn main:app --reload --port 8000
 ✅ API Docs: http://127.0.0.1:8000/docs
 
 ### Step 4 — Frontend Open Karo
-`frontend/index.html` ko browser mein double-click karke open karo.
+Open `frontend/index.html` in your browser by double-clicking it.
 
 ---
 
@@ -114,9 +115,9 @@ git push -u origin main
 ```
 
 ### 🟠 Step 2 — Render.com Pe Backend Deploy Karo
-1. [render.com](https://render.com) → GitHub se Sign Up
-2. **New +** → **Web Service** → Repo connect karo
-3. Ye settings fill karo:
+1. [render.com](https://render.com) → GitHub sign up
+2. **New +** → **Web Service** → connect repo
+3. :fill the settings
 
 | Setting | Value |
 |---------|-------|
@@ -125,23 +126,23 @@ git push -u origin main
 | Build Command | `pip install -r requirements.txt` |
 | Start Command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
 
-4. Deploy karo → milega: `https://heart-disease-xxxx.onrender.com` ✅
+4. Deploy this → milega: `https://heart-disease-xxxx.onrender.com` ✅
 
-### 🟡 Step 3 — index.html Mein URL Update Karo
-`frontend/index.html` mein ye line update karo:
+### 🟡 Step 3 — Update the URL in index.html
+`frontend/index.html` Update this:
 ```js
 // Ye line dhundho aur Render URL daal do
 const API = "https://heart-disease-xxxx.onrender.com";
 ```
-Phir push karo:
+Then push:
 ```bash
 git add . && git commit -m "update API URL" && git push
 ```
 
 ### 🟢 Step 4 — Netlify Pe Frontend Deploy Karo
 1. [netlify.com](https://netlify.com) → Sign Up
-2. Dashboard pe `frontend/` folder **drag & drop** karo
-3. 30 second mein ready:
+2. Dashboard  `frontend/` folder **drag & drop** do
+3. IN 30 second ready:
 
 🔗 **`https://random-name.netlify.app`** — that's your live link!
 
