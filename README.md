@@ -73,7 +73,7 @@ heart-disease-app/
 
 ## 🖥️ Local Setup
 
-### Step 1 — Clone Karo
+### Step 1 — DO CLONE
 ```bash
 git clone https://github.com/APKA_USERNAME/heart-disease-app.git
 cd heart-disease-app
@@ -88,24 +88,24 @@ source venv/bin/activate     # Mac / Linux
 pip install -r requirements.txt
 ```
 
-### Step 3 — Server Start Karo
+### Step 3 — Start The Server
 ```bash
 uvicorn main:app --reload --port 8000
 ```
 ✅ API Docs: http://127.0.0.1:8000/docs
 
-### Step 4 — Frontend Open Karo
+### Step 4 — Now Open The Front-End`
 Open `frontend/index.html` in your browser by double-clicking it.
 
 ---
 
-## 🌐 Live Link Generate Karna (Free Deployment)
+## 🌐 Generate the Live Link (Free Deployment)
 
 ```
 GitHub → Render (backend) → index.html update → Netlify (frontend) = 🔗 LIVE LINK
 ```
 
-### 🔵 Step 1 — GitHub Pe Upload Karo
+### 🔵 Step 1 — Open the Github
 ```bash
 git init
 git add .
@@ -114,7 +114,7 @@ git remote add origin https://github.com/APKA_USERNAME/heart-disease-app.git
 git push -u origin main
 ```
 
-### 🟠 Step 2 — Render.com Pe Backend Deploy Karo
+### 🟠 Step 2 — Deploy On Render.com
 1. [render.com](https://render.com) → GitHub sign up
 2. **New +** → **Web Service** → connect repo
 3. :fill the settings
@@ -139,7 +139,7 @@ Then push:
 git add . && git commit -m "update API URL" && git push
 ```
 
-### 🟢 Step 4 — Netlify Pe Frontend Deploy Karo
+### 🟢 Step 4 — Deploy the Front-End on the Netlify
 1. [netlify.com](https://netlify.com) → Sign Up
 2. Dashboard  `frontend/` folder **drag & drop** do
 3. IN 30 second ready:
