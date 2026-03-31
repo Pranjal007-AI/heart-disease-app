@@ -2,7 +2,7 @@
 ### by Pranjal Parashar
 
 
-## 🔗 Live Demo
+## 🔗 Live Link
 👉 Try the Web App **(https://cardiac-risk-predictor-pranjal.netlify.app)**
 
 > Backend API: https://heart-disease-app-1974.onrender.com
@@ -24,7 +24,7 @@ The user enters their health parameters using sliders and dropdowns, and the mod
 
 ---
 
-## ⚙️ Tech Stack
+## ⚙️ Tech Stack Used
 
 | Layer | Technology | work |
 |-------|-----------|------|
