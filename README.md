@@ -2,7 +2,7 @@
 ### by Pranjal Parashar
 
 
-## 🔗 Live Link
+## 🔗 Here is the Live Link
 👉 Try the Web App **(https://cardiac-risk-predictor-pranjal.netlify.app)**
 
 > Backend API: https://heart-disease-app-1974.onrender.com
