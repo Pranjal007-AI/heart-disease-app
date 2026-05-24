@@ -3,7 +3,7 @@
 
 
 ## 🔗 Here is the Live Link
-👉 Try the Web App **(https://pranjalheart.netlify.app/)**
+👉 Try the Web App **(https://heart-disease-app-xcyi.vercel.app/)**
 
 > Backend API: https://heart-disease-app-1974.onrender.com
 
